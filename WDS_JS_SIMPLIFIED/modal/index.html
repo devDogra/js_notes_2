@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.514);
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        .modal {
+            background-color: white;
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            z-index: 2;
+        }
+
+        .modal.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim corrupti iste veritatis expedita perspiciatis
+            dolore fugiat cum nemo excepturi minus. Corrupti totam neque est, obcaecati deleniti, officia repellat
+            dolorem, similique nesciunt officiis debitis? Beatae porro culpa eligendi quasi at neque modi hic quos
+            delectus omnis, incidunt, vero, voluptatibus alias repudiandae?</p>
+    </div>
+
+    <button class="open-modal-btn">Open modal</button>
+
+    <div class="overlay">
+
+    </div>
+
+    <div class="modal">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <button class="close-modal-btn">Close modal</button>
+    </div>
+
+</body>
+
+</html>

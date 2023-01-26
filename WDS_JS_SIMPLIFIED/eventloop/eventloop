@@ -1,0 +1,20 @@
+JS has 1 thread (1 call stk) (only 1 stmt run at a time).
+
+it runs synchronously (statements executed in a particular order, one after the other)
+
+but to do tasks asyncly (perhaps if they take a long time, or we dont know when they will happen)
+it can fork off other threads (by calling functions provided by the browser API, and also giving them callbacks).
+
+these forked off threads, on finishing their task (eg: fetch) or on a certain condn (eg: click)
+then can FINISH, and send the callback with certain arguments to be executed on the call stk.
+
+however, since JS might be executing some code already, they cant just be pushed on the stk right away.
+so these callbacks enter a TASK QUEUE.
+
+the job of the event loop is to wait until the call stk is clear, and then push tasks/cbs in the task queue on to the call stack to be executed.
+
+the event loop also pushed renders by the browser on to the callstk, and these renders are present in a diff queue and get priority over the task queue.
+
+so only when the callstk is empty do the callbacks get run.
+
+however, promnises and async-awaits behave differently. as soon as the forked off thread signals that it's done (by resolve()ing, or when await xyz returns ), instead of waiting for the callstk to empty, they just wait for the currently running function to complete, and are then executed (by which I mean the .then() part for promises, and the part below the 'await' for async-await)

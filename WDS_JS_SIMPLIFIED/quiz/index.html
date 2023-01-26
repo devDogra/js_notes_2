@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="script.js" defer></script>
+
+    <style>
+        .question {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question[data-status="correct"] {
+            background-color: lightgreen;
+        }
+
+        .question[data-status="wrong"] {
+            background-color: lightcoral;
+        }
+
+        .congrats-modal {
+            border: 2px solid green;
+            color: green;
+            background-color: lightgreen;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.736);
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="quiz">
+        <div class="question" data-answer="6" data-status="unanswered">
+            <p>1) How many losses does Conor have? </p>
+            <label for="">
+                <input type="radio" name="ans-1" value="4">
+                4
+            </label>
+
+            <label for="">
+                <input type="radio" name="ans-1" value="5">
+                5
+            </label>
+
+            <label for="">
+                <input type="radio" name="ans-1" value="6">
+                6
+            </label>
+
+            <label for="">
+                <input type="radio" name="ans-1" value="7">
+                7
+            </label>
+
+        </div>
+
+        <div class="question" data-answer="Diaz">
+            <p>2) Who was Conor's first loss in the UFC? </p>
+            <label for="">
+                <input type="radio" name="ans-2" value="Diaz">
+                Diaz
+            </label>
+
+            <label for="">
+                <input type="radio" name="ans-2" value="Khabib">
+                Khabib
+            </label>
+
+            <label for="">
+                <input type="radio" name="ans-2" value="Dustin">
+                Dustin
+            </label>
+
+            <label for="">
+                <input type="radio" name="ans-3" value="Holloway">
+                Holloway
+            </label>
+
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="overlay"></div>
+
+    <div class="congrats-modal">
+        <p>CONGRATS</p>
+        <p>You got all right</p>
+    </div>
+</body>
+
+</html>
